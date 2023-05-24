@@ -4,4 +4,4 @@
 <h2>本文</h2>
 <p><%= @book.body %></p>
 
-<p><a href ="/books">back</a></p>
+<%= link_to "edit", edit_book_path(@book.id) %><p>|</p><p><a href ="/books">back</a></p>
