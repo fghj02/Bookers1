@@ -1,11 +1,15 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
 <h1>Your Books</h1>
 
 <% @books.each do |book| %>
 
-<p>タイトル</p>
+<p>Title</p>
 <span><%= book.title %></spam>
 
-<p>本文</p><span><%= book.body %></span>
+<p>Body</p><span><%= book.body %></span>
 <%= link_to "Show", book_path(book.id) %>
 <%= link_to "Edit", edit_book_path(book.id) %>
 <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you ok？" %>
