@@ -2,18 +2,23 @@
   <%= flash[:notice] %>
 </div>
 
+<table>
 <h1>Your Books</h1>
 
 <% @books.each do |book| %>
 
-<p>Title</p>
-<span><%= book.title %></spam>
+<tr>
+<th>Title</th>
+<td><span><%= book.title %></spam></td>
 
-<p>Body</p><span><%= book.body %></span>
-<%= link_to "Show", book_path(book.id) %>
-<%= link_to "Edit", edit_book_path(book.id) %>
-<%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you ok？" %>
+<th>Body</th>
+<td><span><%= book.body %></span></td>
+<td><%= link_to "Show", book_path(book.id) %></td>
+<td><%= link_to "Edit", edit_book_path(book.id) %></td>
+<td><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you ok？" %></td>
 <% end %>
+</tr>
+</table>
 
 
 
@@ -36,6 +41,6 @@
   <h4>Body</h4>
   <%= f.text_area :body %>
 
-  <%= f.submit 'create Book' %>
+  <%= f.submit 'Create Book' %>
 <% end %>
 
